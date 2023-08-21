@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  
+  "author": "Drew Morgan",
+  "name": "DW Sandbox",
+  "description": "A test bed for Chrome extensions",
+  "version": "0.1.0",
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  
+  "background": {
+    "service_worker": "background-service-worker.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "js": [
+        "content-script.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
